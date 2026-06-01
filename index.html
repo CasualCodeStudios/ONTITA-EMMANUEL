@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio for a CBE educator and facilitator">
+    <title>Don The Educator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"><img src="up-arrow.png" alt="scroll up icon"></button>
+
+    <!-- CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- FIXED SECTION NAV (right side) -->
+    <nav class="section-nav" id="sectionNav">
+      <span class="section-nav-underline"></span>
+        <a href="#hero" class="snav-item active" data-label="Home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </a>
+        <a href="#about-me" class="snav-item" data-label="About">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </a>
+        <a href="#services" class="snav-item" data-label="Services">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </a>
+        <a href="#faq" class="snav-item" data-label="FAQ">
+    <svg viewBox="0 0 24 24" fill="none">
+        <text x="12" y="13" text-anchor="middle" dominant-baseline="middle" 
+              fill="var(--gold)" font-family="var(--mono)" font-size="12" 
+              font-weight="500" letter-spacing="1">FAQ</text>
+    </svg>
+        </a>
+        <a href="#contact-info" class="snav-item" data-label="Contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9c1.26 2.1 2.84 3.68 4.91 4.91l.76-.76a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+        
+    </nav>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#about-me">About Me</a>
+            <a href="#services">Services</a>
+        </nav>
+        <div class="tooltip-wrapper">
+          <ul class="tooltip-container">
+            <li style="--i: 1.1s" class="nav-link">
+              <div class="tooltip-tab">
+                <svg xmlns="http://www.w3.org/2000/svg" style="fill:none;" fill="none" viewBox="0 0 16 16" height="16" width="16">
+                  <path stroke-linejoin="round" stroke-linecap="round" stroke="#ffffff" d="M1 10V8C1 2.5 6 1 8 1C10 1 15 2.5 15 8V10M1 10C1 10.5552 1 11.1543 1.0984 11.6204C1.24447 12.3122 2 13 3 13C4 13 4.75553 12.3122 4.9016 11.6204C5 11.1543 5 10.5552 5 10C5 9.44485 5 8.84565 4.9016 8.37961C4.75553 7.68776 4 7 3 7C2 7 1.24447 7.68776 1.0984 8.37961C1 8.84565 1 9.44485 1 10ZM15 10C15 10.5552 15 11.1543 14.9016 11.6204C14.7555 12.3122 14 13 13 13C12 13 11.2445 12.3122 11.0984 11.6204C11 11.1543 11 10.5552 11 10C11 9.44485 11 8.84565 11.0984 8.37961C11.2445 7.68776 12 7 13 7C14 7 14.7555 7.68776 14.9016 8.37961C15 8.84565 15 9.44485 15 10ZM15 10C15 15.5 12.5 15 8 15"/>
+                </svg>
+                CONTACT
+              </div>
+              <div class="tooltip">
+                <ul class="tooltip-menu-with-icon">
+                  <li class="tooltip-link">
+                    <a class="tooltip-links" href="tel:+254114060700">
+                      <svg aria-hidden="true" role="img" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m4.6.7 1.6 1.7c.6.6.7 1.6 0 2.2C5 6.1 5 6.4 7.2 8.7c2.4 2.4 2.7 2.4 4.2 1 .6-.5 1.6-.5 2.2 0l1.7 1.7v.1c.6.5.6 1.5 0 2.1v.1c-1.4 1.4-2.5 2-3.8 2h-.7c-1.6-.3-3.4-1.6-6.1-4.4C-.5 6.1-1 4 2.3.7 2.9.1 3.9.1 4.6.7m-1.2.4c-.2 0-.4.1-.5.3C.1 4 .5 5.9 5.3 10.7s6.6 5.2 9.3 2.4l.2.1-.2-.1c.3-.3.3-.7.1-1L13 10.4a.7.7 0 0 0-1 0c-1.9 1.8-2.7 1.6-5.3-1C4 6.6 3.8 5.8 5.6 4c.3-.3.3-.7 0-1L3.9 1.3a.7.7 0 0 0-.5-.2" fill-rule="evenodd" fill="#FFF"/></svg>
+                      +254 114 060 700
+                    </a>
+                  </li>
+                  <li class="tooltip-link">
+                    <a class="tooltip-links" href="#">
+                      <svg aria-hidden="true" role="img" viewBox="0 0 13.971 13.971" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><g><path d="M6.985 13.97a6.985 6.985 0 1 1 6.986-6.985 6.993 6.993 0 0 1-6.986 6.986zm0-13.47a6.485 6.485 0 1 0 6.486 6.485A6.493 6.493 0 0 0 6.985.5"/><path d="M11.1 7.235H6.986a.25.25 0 0 1-.25-.25V1.972a.25.25 0 1 1 .5 0v4.763h3.866a.25.25 0 0 1 0 .5z"/></g></svg>
+                      8:30AM – 5PM
+                    </a>
+                  </li>
+                  <li class="tooltip-link">
+                    <a class="tooltip-links" href="mailto:ardonochari2018@gmail.com">
+                      <svg aria-hidden="true" role="img" viewBox="0 0 18.2 13.342" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path style="fill:#fff" d="M17.9 0H.3a.3.3 0 0 0-.3.3v12.742a.3.3 0 0 0 .3.3h17.6a.3.3 0 0 0 .3-.3V.3a.3.3 0 0 0-.3-.3M.85.5h16.554L9.101 6.364Zm6.983 5.576 1.124.799a.25.25 0 0 0 .29 0l1.527-1.08-.133.13 6.719 6.917H.956ZM.5 12.59V.867l6.918 4.915Zm10.533-6.978L17.7.902v11.574ZM.539.5.5.554V.5Z"/></svg>
+                      ardonochari2018@gmail.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="nikita-logo.jpg" alt="logo">
+        </div>
+
+        <div class="tooltip-wrapper">
+          <ul class="tooltip-container">
+            <li style="--i: 1.1s" class="nav-link">
+              <div class="tooltip-tab">
+                <svg xmlns="http://www.w3.org/2000/svg" style="fill:none;" fill="none" viewBox="0 0 16 16" height="16" width="16">
+                  <path stroke-linejoin="round" stroke-linecap="round" stroke="#ffffff" d="M1 10V8C1 2.5 6 1 8 1C10 1 15 2.5 15 8V10M1 10C1 10.5552 1 11.1543 1.0984 11.6204C1.24447 12.3122 2 13 3 13C4 13 4.75553 12.3122 4.9016 11.6204C5 11.1543 5 10.5552 5 10C5 9.44485 5 8.84565 4.9016 8.37961C4.75553 7.68776 4 7 3 7C2 7 1.24447 7.68776 1.0984 8.37961C1 8.84565 1 9.44485 1 10ZM15 10C15 10.5552 15 11.1543 14.9016 11.6204C14.7555 12.3122 14 13 13 13C12 13 11.2445 12.3122 11.0984 11.6204C11 11.1543 11 10.5552 11 10C11 9.44485 11 8.84565 11.0984 8.37961C11.2445 7.68776 12 7 13 7C14 7 14.7555 7.68776 14.9016 8.37961C15 8.84565 15 9.44485 15 10ZM15 10C15 15.5 12.5 15 8 15"/>
+                </svg>
+                <a href="#socials" style="color: var(--gold); text-decoration: none;">CONTACTS</a>
+              </div>
+              <div class="tooltip">
+                <ul class="tooltip-menu-with-icon">
+                  <li class="tooltip-link">
+                    <a class="tooltip-links" href="tel:+254111760757">
+                      <svg aria-hidden="true" role="img" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m4.6.7 1.6 1.7c.6.6.7 1.6 0 2.2C5 6.1 5 6.4 7.2 8.7c2.4 2.4 2.7 2.4 4.2 1 .6-.5 1.6-.5 2.2 0l1.7 1.7v.1c.6.5.6 1.5 0 2.1v.1c-1.4 1.4-2.5 2-3.8 2h-.7c-1.6-.3-3.4-1.6-6.1-4.4C-.5 6.1-1 4 2.3.7 2.9.1 3.9.1 4.6.7m-1.2.4c-.2 0-.4.1-.5.3C.1 4 .5 5.9 5.3 10.7s6.6 5.2 9.3 2.4l.2.1-.2-.1c.3-.3.3-.7.1-1L13 10.4a.7.7 0 0 0-1 0c-1.9 1.8-2.7 1.6-5.3-1C4 6.6 3.8 5.8 5.6 4c.3-.3.3-.7 0-1L3.9 1.3a.7.7 0 0 0-.5-.2" fill-rule="evenodd" fill="#FFF"/></svg>
+                      +254 114 060 700
+                    </a>
+                  </li>
+                  <li class="tooltip-link">
+                    <a class="tooltip-links" href="#">
+                      <svg aria-hidden="true" role="img" viewBox="0 0 13.971 13.971" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><g><path d="M6.985 13.97a6.985 6.985 0 1 1 6.986-6.985 6.993 6.993 0 0 1-6.986 6.986zm0-13.47a6.485 6.485 0 1 0 6.486 6.485A6.493 6.493 0 0 0 6.985.5"/><path d="M11.1 7.235H6.986a.25.25 0 0 1-.25-.25V1.972a.25.25 0 1 1 .5 0v4.763h3.866a.25.25 0 0 1 0 .5z"/></g></svg>
+                      8:30AM – 5PM
+                    </a>
+                  </li>
+                  <li class="tooltip-link">
+                    <a class="tooltip-links" href="mailto:ardonochari2018@gmail.com">
+                      <svg aria-hidden="true" role="img" viewBox="0 0 18.2 13.342" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path style="fill:#fff" d="M17.9 0H.3a.3.3 0 0 0-.3.3v12.742a.3.3 0 0 0 .3.3h17.6a.3.3 0 0 0 .3-.3V.3a.3.3 0 0 0-.3-.3M.85.5h16.554L9.101 6.364Zm6.983 5.576 1.124.799a.25.25 0 0 0 .29 0l1.527-1.08-.133.13 6.719 6.917H.956ZM.5 12.59V.867l6.918 4.915Zm10.533-6.978L17.7.902v11.574ZM.539.5.5.554V.5Z"/></svg>
+                      ardonochari2018@gmail.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-overlap-bg"></div>
+        <div class="image-wrapper">
+            <div class="image-placeholder">
+                <img src="ardon-hero.jpg" alt="Hero background">
+            </div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-eyebrow">Ochari Ardon</span>
+            <h1 class="em">Don<br/><em style="font-family: Arial, Helvetica, sans-serif;">-the educator-</em></h1>
+            <div class="hero-cta-row">
+                <div class="void-wrapper">
+                  <div class="singularity">
+                    <div class="content">
+                      <span class="glitch-text">KNOW ME</span>
+                      <div class="particles"></div>
+                    </div>
+                  </div>
+                  <a href="#about-me" class="event-horizon">ABOUT ME!</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:block; width:0; height:0;">
+                    <defs>
+                      <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="about-me" id="about-me">
+
+        <!-- Falling squares canvas — injected by JS -->
+        <div class="falling-squares-canvas" id="aboutSquaresCanvas"></div>
+
+        <div class="about-me-wrapper">
+
+            <span class="loader">
+                <span class="about-title"><span class="kno">KNO</span>W YOUR EDUCATOR</span>
+            </span>
+
+            <div class="about-grid">
+
+                <!-- LEFT -->
+                <div class="about-left">
+                    <div class="about-tagline-row"></div>
+                    <p class="about-sub">I'm <strong>Ardon Ochari</strong>,<br> 
+                    A <span title="Competency-Based Education">C.B.E</span> Educator, Facilitator &amp; Artist</p>
+                    <p class="about-text">
+                       A dedicated CBE teacher fostering creativity, critical thinking, collaboration, and holistic learner development.
+
+                    </p>
+                </div>
+
+                <!-- RIGHT: Fun Facts / stats -->
+                <div style="" class="about-right" id="stats">
+                    <h3 class="ff-title">Fun Facts</h3>
+                    <div class="stats-grid">
+
+                        <div class="item-hints">
+                            <div class="hint" data-position="4">
+                                <span class="hint-radius"></span>
+                                <span class="hint-dot" style="animation-delay: 1s;">5+</span>
+                                <div class="hint-content do--split-children">
+                                    <p>Years of Experience</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-hints">
+                            <div class="hint" data-position="4">
+                                <span class="hint-radius"></span>
+                                <span class="hint-dot">123+</span>
+                                <div class="hint-content do--split-children">
+                                    <p>Projects Done</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-hints">
+                            <div class="hint" data-position="4">
+                                <span class="hint-radius"></span>
+                                <span class="hint-dot" style="animation-delay: 1s;">11+</span>
+                                <div class="hint-content do--split-children">
+                                    <p>Awards Won</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: none;" class="item-hints">
+                            <div class="hint" data-position="4">
+                                <span class="hint-radius"></span>
+                                <span class="hint-dot">102+</span>
+                                <div class="hint-content do--split-children">
+                                    <p>Happy Clients</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: none;" class="item-hints">
+                            <div class="hint" data-position="4">
+                                <span class="hint-radius"></span>
+                                <span class="hint-dot" style="animation-delay: 1s;">187k+</span>
+                                <div class="hint-content do--split-children">
+                                    <p>Followers Online</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: none;" class="item-hints">
+                            <div class="hint" data-position="4">
+                                <span class="hint-radius"></span>
+                                <span class="hint-dot">12+</span>
+                                <div class="hint-content do--split-children">
+                                    <p>New Videos Monthly</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /stats-grid -->
+                </div><!-- /about-right -->
+
+            </div><!-- /about-grid -->
+
+            <div style="display: none;" class="icons-row">
+                <img src="graphic-design (1).png" alt="vector icon">
+                <img src="motion-graphic.png" alt="motion graphic icon">
+                <img src="layers.png" alt="layers icon">
+                <img src="graphic-design.png" alt="graphic design icon">
+                <img src="3d.png" alt="3d icon">
+                <img src="design-thinking.png" alt="idea icon">
+                <img src="premium-quality.png" alt="badge icon">
+                <img src="brand-recognition.png" alt="brand identity icon">
+            </div>
+
+        </div><!-- /about-me-wrapper -->
+    </section>
+
+    <!-- SERVICES — UNCHANGED -->
+    <section class="services" id="services">
+        <div class="services-header">
+            <span class="section-label">What I Offer</span>
+            <h2 class="services-title">Services &amp; Skills</h2>
+        </div>
+
+        <div class="service-wrapper">
+
+          <!-- COMMUNICATION SKILLS -->
+            <div class="book">
+                <div class="book-back">
+                    <div class="book-image" style="background: #000;"></div>
+                    <span class="book-back-label">Communication</span>
+                </div>
+                <div class="book-back">
+                    <div class="book-image" style="background-image: url('https://i.pinimg.com/736x/3d/00/1d/3d001d397223a5e25af94e94d60037ab.jpg')"></div>
+                    <span class="book-back-label">Communication</span>
+                </div>
+                <div class="cover">
+                    <div class="cover-inner">
+                        <span class="cover-icon">
+                          <img src="communication.png" alt=" icon">
+                        </span>
+                        <p class="cover-title">Communication Skills</p>
+                        <div class="cover-desc">
+                          <p style="padding-bottom:.5rem; font-size:16px;">Achieved through:</p>
+                          <ul>
+                            <li>Active Participation</li>
+                            <li>Oral Presentations</li>
+                            <li>Promoting Reading Activities</li>
+                          </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- COLLABORATION -->
+            <div class="book">
+                <div class="book-back">
+                    <div class="book-image" style="background: #000;"></div>
+                    <span class="book-back-label">Collaboration</span>
+                </div>
+                <div class="book-back">
+                    <div class="book-image" style="background-image: url('https://i.pinimg.com/736x/1c/a0/f1/1ca0f19947ed7fc04e1643e2a5a8e00a.jpg')"></div>
+                    <span class="book-back-label">Collaboration</span>
+                </div>
+                <div class="cover">
+                    <div class="cover-inner">
+                        <span class="cover-icon">
+                          <img src="collaboration.png" alt=" icon">
+                        </span>
+                        <p class="cover-title">Collaboration Skills</p>
+                        <div class="cover-desc">
+                          <p style="padding-bottom:.5rem; font-size:16px;">Achieved through:</p>
+                          <ul>
+                            <li>Facilitated Discussions</li>
+                            <li>Encouraging Peer Learning</li>
+                            <li>Creating Problem-Solving Tasks</li>
+                          </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- CRITICAL THINKING -->
+            <div class="book">
+                <div class="book-back">
+                    <div class="book-image" style="background: #000;"></div>
+                    <span class="book-back-label">Critical Thinking</span>
+                </div>
+                <div class="book-back">
+                    <div class="book-image" style="background-image: url('https://i.pinimg.com/736x/46/f3/51/46f351f9694e43fc1cf2df5de63254c6.jpg')"></div>
+                    <span class="book-back-label">Critical thinking</span>
+                </div>
+                <div class="cover">
+                    <div class="cover-inner">
+                        <span class="cover-icon">
+                          <img src="critical-thinking.png" alt=" icon">
+                        </span>
+                        <p class="cover-title">Critical thinking</p>
+                        <div class="cover-desc">
+                          <p style="padding-bottom:.5rem; font-size:16px;">Achieved through:</p>
+                          <ul>
+                            <li>Encouraging;
+                            <ol>
+                              <li> Inquiry</li>
+                              <li> Investigation</li>
+                            </ol>
+                            </li>
+                            <li>Facilitating;
+                            <ol>
+                              <li> Discussions</li>
+                              <li> Debates</li>
+                            </ol>
+                            </li>
+                          </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- CREATIVITY -->
+            <div class="book">
+                <div class="book-back">
+                    <div class="book-image" style="background: #000;"></div>
+                    <span class="book-back-label">Creativity</span>
+                </div>
+                <div class="book-back">
+                    <div class="book-image" style="background-image: url('https://i.pinimg.com/736x/db/9a/b5/db9ab5d9cdee59fbfcc5ada54a4c637a.jpg')"></div>
+                    <span class="book-back-label">Creativity</span>
+                </div>
+                <div class="cover">
+                    <div class="cover-inner">
+                        <span class="cover-icon">
+                          <img src="creativity.png" alt=" icon">
+                        </span>
+                        <p class="cover-title">Creativity &amp; Assertiveness</p>
+                        <div class="cover-desc">
+                          <p style="padding-bottom:.5rem; font-size:16px;">Achieved through:</p>
+                          <ul>
+                            <li>Using Open-Ended Activities</li>
+                            <li>Encouraging Learners to Ask Questions</li>
+                            <li>Promoting Project-Based Learning</li>
+                          </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+
+    </section>
+
+
+<!-- ══════════════════════════════════════
+   FAQ SECTION
+══════════════════════════════════════ -->
+<section style="" class="faq-section" id="faq">
+ 
+    <div class="faq-inner">
+        <span class="section-label">Got Questions?</span>
+        <h2 class="faq-title">FAQ</h2>
+ 
+        <div class="faq-list">
+ 
+            <blockquote class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-mark">"</span>
+                    What is the role of a CBE educator?
+                </div>
+                <p class="faq-a">
+                    A CBE educator facilitates learning by guiding learners to acquire and demonstrate competencies. Rather than focusing solely on content delivery, they create engaging learning experiences that help learners develop knowledge, skills, values, and attitudes.
+                </p>
+                <cite class="faq-cite">— Teacher's Role</cite>
+            </blockquote>
+ 
+            <blockquote class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-mark">"</span>
+                    How does a CBE teacher assess learners?
+                </div>
+                <p class="faq-a">
+                    A CBE teacher uses continuous assessment methods such as observations, projects, discussions, practical activities, portfolios, and performance tasks to evaluate learners' mastery of competencies rather than relying only on examinations.
+                </p>
+                <cite class="faq-cite">— Assessment</cite>
+            </blockquote>
+ 
+            <blockquote class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-mark">"</span>
+                    What teaching methods are used in Competency-Based Education?
+                </div>
+                <p class="faq-a">
+                    CBE educators use learner-centered approaches such as group discussions, inquiry-based learning, project-based learning, role play, problem-solving activities, and collaborative tasks that encourage active participation and critical thinking.
+                </p>
+                <cite class="faq-cite">— Teaching Methods</cite>
+            </blockquote>
+ 
+            <blockquote class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-mark">"</span>
+                    How does a CBE teacher promote creativity and innovation?
+                </div>
+                <p class="faq-a">
+                    By providing open-ended tasks, encouraging learners to generate original ideas, and allowing them to explore multiple solutions to real-life challenges, CBE teachers nurture creativity, imagination, and innovation.
+                </p>
+                <cite class="faq-cite">— Creativity</cite>
+            </blockquote>
+ 
+            <blockquote class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-mark">"</span>
+                    Why is collaboration important in a CBE classroom?
+                </div>
+                <p class="faq-a">
+                    Collaboration helps learners develop teamwork, communication, leadership, and problem-solving skills. CBE teachers regularly organize group activities and projects that encourage learners to work together toward common goals.
+                </p>
+                <cite class="faq-cite">— Collaboration</cite>
+            </blockquote>
+ 
+        </div>
+    </div>
+ 
+</section>
+ 
+
+    <!-- CONTACT / SOCIAL -->
+    <section id="contact-info" class="contacts-places">
+
+        <!-- Falling squares canvas -->
+        <div class="falling-squares-canvas" id="contactSquaresCanvas"></div>
+
+        <span class="section-label" style="margin:0;">Reach Out</span>
+        <!-- Section title -->
+        <h2 class="contact-title">Contact Us</h2>
+
+        <!-- Two-column grid: socials LEFT | contact info RIGHT -->
+        <div class="contact-inner">
+
+            <!-- LEFT: original socials stacked vertically -->
+
+
+            <!-- RIGHT: original tooltip contact info -->
+            <!-- From Uiverse.io by gharsh11032000 --> 
+<div class="form-container">
+      <form class="form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required="">
+        </div>
+        <div class="form-group">
+          <label for="textarea">How Can We Help You?</label>
+          <textarea name="textarea" id="textarea" rows="10" cols="50" required="">          </textarea>
+        </div>
+        <button class="form-submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+<!-- From Uiverse.io by vinodjangid07 --> 
+<div class="socialsWrapper" id="socials">
+  <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: #fed; text-align: center; padding-bottom: 1rem;">Follow My Socials</h3>
+<div class="card">
+  <div class="background">
+  </div>
+  <div class="logos">
+       <p style="color: #fae1c7c8; text-align: center; font-family: HollyBerryPop, sans-serif;">Socials</p>
+   <img src="logo.png" alt="">
+
+  </div>
+
+  <a href="https://www.tiktok.com/@meddusaaiinsights" target="_blank">
+      <div class="box box1"><span class="icon"><img src="tik-tok.png" alt="tiktok icon"></span></div>
+  </a>
+
+  <a href="https://www.youtube.com/channel/UC42s91SIvfjpY1xrY-eaDwA" target="_blank">
+      <div class="box box2"> <span class="icon"><img src="youtube.png" alt="youtube icon"></span></div>
+  </a>
+
+  <a href="https://www.instagram.com/kingmeddusa/?hl=en" target="_blank">
+      <div class="box box3"><span class="icon"><img src="instagram.png" alt="instagram icon"></span></div>
+  </a>
+
+<script>
+document.querySelectorAll(".box").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault(); // Stops redirection
+        console.log("Link click blocked");
+    });
+});
+</script>
+
+  <div class="box box4"></div>
+</div>
+</div>
+
+        </div><!-- /contact-inner -->
+
+    </section>
+
+ 
+<!-- ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ -->
+<footer class="site-footer" id="footer">
+ 
+    <!-- Top bar -->
+    <div class="footer-top">
+        <div class="footer-logo-block">
+            <div class="footer-logo">
+                <img src="nikita-logo.jpg" alt="logo">
+            </div>
+            <p class="footer-tagline">
+                A dedicated CBE teacher fostering creativity, 
+                critical thinking, collaboration, and holistic learner development.
+            </p>
+        </div>
+ 
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <span class="footer-nav-heading">Navigate</span>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact-info">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+ 
+        <div class="footer-contact-block">
+            <span class="footer-nav-heading">Get in Touch</span>
+            <ul class="footer-contact-list">
+                <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <a href="mailto:ardonochari2018@gmail.com">ardonochari2018@gmail.com</a>
+                </li>
+                <li>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Mon – Fri, 8:30 AM – 5 PM</span>
+                </li>
+            </ul>
+        </div>
+ 
+        <div class="footer-socials-block">
+            <span class="footer-nav-heading">Follow Along</span>
+            <div class="footer-socials">
+                <a href="https://www.tiktok.com/@meddusaaiinsights" target="_blank" rel="noopener" class= "fsoc-link" aria-label="TikTok">
+                    <img src="tik-tok.png" alt="TikTok">
+                    <span>TikTok</span>
+                </a>
+                <a href="https://www.youtube.com/channel/UC42s91SIvfjpY1xrY-eaDwA" target="_blank" rel="noopener" class="fsoc-link" aria-label="YouTube">
+                    <img src="youtube.png" alt="YouTube">
+                    <span>YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/kingmeddusa/?hl=en" target="_blank" rel="noopener" class="fsoc-link" aria-label="Instagram">
+                    <img src="instagram.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                
+                <script>
+                document.querySelectorAll(".fsoc-link").forEach(links => {
+                  links.addEventListener("click", function(events) {
+                    events.preventDefault();
+                  })
+                });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+ 
+    <!-- Big display name -->
+    <div class="footer-display-name" aria-hidden="true">ARDON</div>
+ 
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="footerYear"></span> Ardon Ochari. — Don The Educator. All rights reserved.</p>
+        <p class="footer-credit">Crafted with intention &amp; a lot of coffee.</p>
+    </div>
+ 
+</footer>
+ 
+ 
+
+    <script>
+    // ── Scroll to top
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+        updateSectionNav();
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── Hero parallax
+    const heroImg = document.querySelector('.image-wrapper');
+    window.addEventListener('scroll', () => {
+        if (heroImg) heroImg.style.transform = `translateY(${window.scrollY * 0.45}px)`;
+    });
+
+    // ── Custom cursor
+    const cursor = document.getElementById('cursor');
+    const ring   = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animCursor() {
+        if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
+        requestAnimationFrame(animCursor);
+    }
+    animCursor();
+
+    // ── Section nav active state
+    const sections = ['hero','about-me','services','stats','contact-info'];
+    const navItems = document.querySelectorAll('.snav-item');
+    function updateSectionNav() {
+        let current = 'hero';
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && window.scrollY >= el.offsetTop - 200) current = id;
+        });
+        navItems.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+        });
+    }
+
+    // ── Smooth scroll for section nav
+    navItems.forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // ────────────────────────────────────────
+    // FALLING SQUARES ANIMATION
+    // Each square gets its own injected @keyframes with concrete opacity values
+    // so browsers can't silently skip CSS custom property interpolation.
+    // ────────────────────────────────────────
+    let sqCounter = 0; // global unique ID per square
+
+    // Shared <style> tag we append keyframes into
+    const sqStyleSheet = document.createElement('style');
+    document.head.appendChild(sqStyleSheet);
+
+    function createFallingSquares(canvasEl, sectionEl) {
+        if (!canvasEl || !sectionEl) return;
+
+        let animationTriggered = false;
+
+        function spawnSquares() {
+            // Remove old squares + their keyframes
+            canvasEl.innerHTML = '';
+
+            const sectionH = sectionEl.offsetHeight;
+            const count = Math.floor(Math.random() * 10) + 30; // 30–40
+
+            for (let i = 0; i < count; i++) {
+                const uid = 'sq' + (++sqCounter);
+
+                const size      = Math.floor(Math.random() * 58) + 18;      // 18–76px
+                const xPercent  = (Math.random() * 88).toFixed(2);          // 0–88% from left
+                const fallDist  = sectionH + 100;
+                const dur       = (Math.random() * 2.2 + 1.1).toFixed(2);  // 1.1–3.3s
+                const delay     = (Math.random() * 2.0).toFixed(2);         // 0–2.0s stagger
+                const rotEnd    = (Math.random() * 50 - 25).toFixed(1);     // ±25°
+                const rotMid    = (parseFloat(rotEnd) * 0.6).toFixed(1);
+
+                // Solid peak opacity — clearly visible against dark ink background
+                const peak  = (Math.random() * 0.30 + 0.55).toFixed(2);   // 0.55–0.85
+                const mid   = (parseFloat(peak) * 0.85).toFixed(2);
+                const end   = (parseFloat(peak) * 0.20).toFixed(2);
+
+                // Gold colour variation
+                const r = Math.floor(Math.random() * 45 + 160);   // 160–205
+                const g = Math.floor(Math.random() * 35 + 125);   // 125–160
+                const b = Math.floor(Math.random() * 20 + 35);    // 35–55
+
+                // Inject a unique keyframe for this square
+                sqStyleSheet.sheet.insertRule(`
+                    @keyframes ${uid} {
+                        0%   { opacity: 0;     transform: translateY(0px)          rotate(0deg); }
+                        7%   { opacity: ${peak}; }
+                        65%  { opacity: ${mid};  transform: translateY(${Math.round(fallDist * 0.82)}px) rotate(${rotMid}deg); }
+                        88%  { opacity: ${end};  transform: translateY(${fallDist}px) rotate(${rotEnd}deg); }
+                        100% { opacity: 0;     transform: translateY(${fallDist}px) rotate(${rotEnd}deg) scaleY(0.08); }
+                    }
+                `, sqStyleSheet.sheet.cssRules.length);
+
+                const sq = document.createElement('div');
+                sq.classList.add('falling-square');
+                sq.style.cssText = `
+                    left: ${xPercent}%;
+                    width: ${size}px;
+                    height: ${size}px;
+                    border: 1.5px solid rgba(${r},${g},${b}, 0.90);
+                    background: rgba(${r},${g},${b}, 0.13);
+                    box-shadow: 0 0 8px rgba(${r},${g},${b}, 0.35),
+                                inset 0 0 5px rgba(${r},${g},${b}, 0.08);
+                    animation: ${uid} ${dur}s ${delay}s linear forwards;
+                `;
+
+                canvasEl.appendChild(sq);
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animationTriggered) {
+                    animationTriggered = true;
+                    spawnSquares();
+                    setTimeout(() => { animationTriggered = false; }, 5500);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        observer.observe(sectionEl);
+    }
+
+    // Init both sections
+    createFallingSquares(
+        document.getElementById('aboutSquaresCanvas'),
+        document.getElementById('about-me')
+    );
+    createFallingSquares(
+        document.getElementById('contactSquaresCanvas'),
+        document.getElementById('contact-info')
+    );
+
+    // Footer year script (add alongside your existing <script>) 
+      document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    </script>
+</body>
+</html>
