@@ -264,7 +264,6 @@ header {
     height: 60px; 
     overflow: hidden; 
     border-radius: 12px;
-   
 }
 .logo img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 1px #000); }
 
@@ -379,9 +378,6 @@ header {
     inset: 0;
     z-index: -2;
     background: var(--gold-shine);
-    /* background:
-        linear-gradient(to bottom, rgba(250,247,242,0.08) 0%, rgba(28,26,22,0.55) 70%, rgba(28,26,22,0.85) 100%),
-        url("https://plus.unsplash.com/premium_photo-1686361282530-e7392d8cb347?q=80&w=1632&auto=format&fit=crop") no-repeat center/cover; */
 }
 .image-wrapper { position: fixed; inset: 0; z-index: -1; }
 .image-wrapper::after {
@@ -400,7 +396,6 @@ header {
     background: linear-gradient(rgba(0,0,0,0.5));
     width: 100%; 
     height: 100%; 
-    
 }
 .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -574,7 +569,6 @@ header {
     z-index: 0;
 }
 
-/* Base square — JS adds unique class per square with its own keyframe */
 .falling-square {
     position: absolute;
     top: -80px;
@@ -593,7 +587,6 @@ header {
     overflow: hidden;
 }
 
-/* All content inside about-me sits above the canvas */
 .about-me > * { position: relative; z-index: 1; }
 .about-me-wrapper {
     position: relative;
@@ -677,7 +670,6 @@ header {
     line-height: 1;
 }
 
-/* ── CHANGED: bigger about-sub, using Cormorant Garamond (no monospace) ── */
 .about-sub {
     font-family: var(--serif);
     font-size: clamp(1.25rem, 2.5vw, 1.8rem);
@@ -693,7 +685,6 @@ header {
     font-weight: 600;
 }
 
-/* ── CHANGED: about-text now uses Cormorant Garamond instead of monospace ── */
 .about-text {
     font-family: var(--serif);
     font-size: clamp(1rem, 1.6vw, 1.15rem);
@@ -857,9 +848,11 @@ header {
     justify-content: center;
 }
 
-/* Book card */
-
-
+/* ──────────────────────────────────────
+   BOOK CARD
+   — Image shows by default (cover hidden)
+   — Hover reveals the text cover
+────────────────────────────────────── */
 .book {
   position: relative;
   border-radius: 10px;
@@ -867,22 +860,30 @@ header {
   height: 320px;
   background-color: var(--ink);
   box-shadow: 4px 4px 20px rgba(0,0,0,0.3);
-  transform: preserve-3d;
+  transform-style: preserve-3d;
   perspective: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.book-back { position: absolute; inset: 0; border-radius: 10px; overflow: hidden; }
+
+.book-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .book-image {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.6);
+    filter: brightness(0.7);
     transition: filter 0.5s;
 }
+
 .book-back-label {
     position: absolute;
     bottom: 1rem;
@@ -894,6 +895,8 @@ header {
     letter-spacing: 0.05em;
     text-shadow: 0 5px 5px rgba(0,0,0,0.8);
 }
+
+/* Cover starts rotated away (hidden) — slides in on hover */
 .cover {
   top: 0;
   position: absolute;
@@ -903,13 +906,23 @@ header {
   height: 100%;
   border-radius: 10px;
   cursor: pointer;
-  transition: all .5s ease;
+  transition: transform .5s ease;
   transform-origin: 0;
+  transform: rotatey(-80deg);
   box-shadow: 2px 2px 16px rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.book:hover .cover {
+  transform: rotatey(0deg);
+}
+
+.book:hover .book-image {
+  filter: brightness(0.4);
+}
+
 .cover-inner {
     display: flex;
     flex-direction: column;
@@ -932,26 +945,20 @@ header {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.5);
 }
-.cover-desc ul{
+.cover-desc ul {
   list-style-position: inside;
 }
-.cover-desc ol{
+.cover-desc ol {
   padding: 0 8px;
 }
-.cover-desc ol li{
+.cover-desc ol li {
   list-style-type: lower-roman;
 }
-
-.cover-desc li{
+.cover-desc li {
   text-align: left;
   padding: 0;
   margin: 0;
 }
-
-
-
-.book:hover .cover { transform: rotatey(-80deg); }
-.book:hover .book-image { filter: brightness(0.85); }
 
 /* ──────────────────────────────────────
    CONTACTS
@@ -969,8 +976,8 @@ header {
     gap: 3rem;
 }
 
-/* All content sits above canvas */
 .contacts-places > * { position: relative; z-index: 1; }
+
 /* From Uiverse.io by gharsh11032000 */ 
 .form-container {
     min-width: 300px;
@@ -1073,7 +1080,6 @@ header {
   border-color: #fff;
 }
 
-
 /* Section title */
 .contact-title {
     font-family: 'HollyBerryPop', serif;
@@ -1086,7 +1092,7 @@ header {
     text-align: center;
 }
 
-/* Two-column grid: socials LEFT | contact tooltip RIGHT */
+/* Two-column grid */
 .contact-inner {
     width: 100%;
     max-width: 960px;
@@ -1097,7 +1103,6 @@ header {
     justify-items: center;
 }
 
-/* Socials column — horizontal row, evenly spaced */
 /* From Uiverse.io by vinodjangid07 */ 
 .card {
   position: relative;
@@ -1163,7 +1168,7 @@ header {
 }
 
 .box1::before {
-  background: radial-gradient(circle at 30% 107%, purple 0%, #ff53d4 20%, #000 80%, #62c2fe );
+  background: radial-gradient(circle at 30% 107%, purple 0%, #ff53d4 20%, #000 80%, #62c2fe);
 }
 
 .box1:hover::before {
@@ -1225,7 +1230,6 @@ header {
   letter-spacing: 0px;
 }
 
-
 /* ── FAQ ── */
 .faq-section {
     width: 100%;
@@ -1259,7 +1263,7 @@ header {
     gap: 1.5rem;
     width: 100%;
 }
- 
+
 /* Blockquote card */
 .faq-item {
     position: relative;
@@ -1307,7 +1311,7 @@ header {
     color: var(--gold);
     font-style: normal;
 }
- 
+
 /* ── FOOTER ── */
 .site-footer {
     width: 100%;
@@ -1321,7 +1325,7 @@ header {
     position: relative;
     overflow: hidden;
 }
- 
+
 /* Top grid */
 .footer-top {
     width: 100%;
@@ -1331,7 +1335,7 @@ header {
     gap: 3rem;
     padding-bottom: 3.5rem;
 }
- 
+
 /* Logo block */
 .footer-logo-block {
     display: flex;
@@ -1358,7 +1362,7 @@ header {
     color: rgba(255,255,255,0.4);
     line-height: 1.7;
 }
- 
+
 /* Nav columns */
 .footer-nav-heading {
     display: block;
@@ -1386,7 +1390,7 @@ header {
     transition: color 0.2s;
 }
 .footer-nav ul a:hover { color: var(--gold-light); }
- 
+
 /* Contact list */
 .footer-contact-list li {
     display: flex;
@@ -1403,7 +1407,7 @@ header {
     transition: color 0.2s;
 }
 .footer-contact-list li a:hover { color: var(--gold-light); }
- 
+
 /* Socials */
 .footer-socials {
     display: flex;
@@ -1428,7 +1432,7 @@ header {
 }
 .fsoc-link:hover { color: var(--gold-light); }
 .fsoc-link:hover img { filter: grayscale(0) brightness(1); }
- 
+
 /* Divider */
 .footer-divider {
     width: 100%;
@@ -1436,7 +1440,7 @@ header {
     height: 1px;
     background: rgba(184,145,58,0.15);
 }
- 
+
 /* Big display name */
 .footer-display-name {
     font-family: 'HollyBerryPop', serif;
@@ -1454,7 +1458,7 @@ header {
     text-align: center;
     width: 100%;
 }
- 
+
 /* Bottom bar */
 .footer-bottom {
     width: 100%;
@@ -1474,7 +1478,7 @@ header {
     text-transform: uppercase;
     color: rgba(255,255,255,0.2);
 }
- 
+
 /* ── Footer responsive ── */
 @media (max-width: 900px) {
     .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -1485,21 +1489,17 @@ header {
     .footer-bottom { flex-direction: column; align-items: flex-start; }
     .faq-item { padding: 1.2rem 1.2rem 1rem 1.4rem; }
 }
- 
-
 
 @media (max-width: 900px) {
-    .contact-inner{
+    .contact-inner {
         grid-template-columns: 1fr;
         padding: 0 4rem;
     }
-    .about-grid{grid-template-columns: 1fr;}
+    .about-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
-    .hero{
-        height: fit-content;
-    }
+    .hero { height: fit-content; }
     .hero-content { padding: 0 1.5rem 3rem; }
     #scrollTopBtn { right: 1.5rem; }
     .about-me-wrapper { padding: 6rem 1.5rem 2rem; }
@@ -1510,7 +1510,6 @@ header {
     .hero-content { padding: 0 1rem 2.5rem; gap: 1.5rem; }
     .about-me-wrapper { padding: 6rem 3rem 2rem; }
     .about-heading { font-size: 1.4rem; }
-    /* .about-left{padding: 0 2rem;} */
     .stats-grid { grid-template-columns: repeat(3, 1fr); }
     .service-wrapper { gap: 1.5rem; }
     .services { padding: 4rem 1rem 5rem; }
@@ -1522,15 +1521,15 @@ header {
 }
 
 @media (max-width: 450px) {
-    .contact-inner{padding: 0 3rem 0 1rem;}
+    .contact-inner { padding: 0 3rem 0 1rem; }
     .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .stats-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-section{
+section {
     position: relative;
 }
-section::before{
+section::before {
     position: absolute;
     content: "";
     background: var(--gold);
